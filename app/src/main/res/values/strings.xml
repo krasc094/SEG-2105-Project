@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GCC Cylcling Mobile Application</string>
+    <string name="welcome_screen_header">Welcome </string>
+    <string name="client_name">(name)</string>
+    <string name="logged_in_prompt">You are logged in as</string>
+    <string name="client_role">(role)</string>
 </resources>
