@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/personcrossingroad"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="76dp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/pedalpal" />
+
+        <Space
+            android:id="@+id/pedalpalLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="76dp"
+            android:background="@drawable/pedalpal" />
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/login_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="35dp">
+
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="@string/login"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/emailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/login_border"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:ems="10"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:textColor="@color/green" />
+
+            <EditText
+                android:id="@+id/passwordLogin"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/login_border"
+                android:drawableLeft="@drawable/baseline_lock_24"
+                android:ems="10"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/signinBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="@string/signinBtn"
+                android:textColorHighlight="#5AAB20"
+                android:textColorLink="#5AAB20" />
+
+            <TextView
+                android:id="@+id/signupClick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:hint="@string/Signup" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_marginTop="10dp"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:background="@drawable/button_background"
+                android:text="@string/Clickhere" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
