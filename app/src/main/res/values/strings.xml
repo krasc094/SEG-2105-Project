@@ -4,4 +4,14 @@
     <string name="client_name">(name)</string>
     <string name="logged_in_prompt">You are logged in as</string>
     <string name="client_role">(role)</string>
+    <string name="login">Login</string>
+
+    <string name="email_hint">Email</string>
+
+    <string name="password_hint">Password</string>
+
+    <string name="Signup">Don\'t have an account yet? </string>
+    <string name="Clickhere">Click here to sign up</string>
+
+    <string name="signinBtn">Sign In</string>
 </resources>
