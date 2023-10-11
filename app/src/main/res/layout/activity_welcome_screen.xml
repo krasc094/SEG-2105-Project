@@ -12,7 +12,7 @@
         android:layout_width="350dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
-        android:background="@drawable/welcomeScreenTextBorder"
+        android:background="@drawable/login_border"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -64,9 +64,9 @@
             android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:text="@string/logged_in_prompt"
+            android:textColor="#184E31"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#184E31" />
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
