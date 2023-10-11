@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent();
         } else {
             // no user is signed in
-            Intent intent = new Intent(this, SignupScreen.class);
+            Intent intent = new Intent(this, LoginScreen.class);
             startActivity(intent);
         }
     }
