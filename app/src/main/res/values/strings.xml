@@ -7,12 +7,14 @@
     <string name="login"> Login </string>
 
     <string name="hint_email"> Email </string>
+    <string name="hint_username"> Username </string>>
     <string name="hint_password"> Password </string>
 
     <string name="prompt_signup"> Don\'t have an account yet? </string>
     <string name="btn_register"> Click here to sign up</string>
 
     <string name="btn_sign_in"> Sign In </string>
+    <string name="btn_sign_up"> Sign Up </string>
 
     <string name="title_activity_create_account"> CreateAccountActivity </string>
 
@@ -20,9 +22,15 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_up">Sign up</string>
 
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string-array name = "account_type">
+        <item> Cycling Club </item>
+        <item> Participant </item>
+    </string-array>
 </resources>
