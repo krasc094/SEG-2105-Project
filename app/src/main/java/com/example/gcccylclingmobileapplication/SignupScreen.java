@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,14 +23,22 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignupScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
         private Spinner spinner_roles;
         private FirebaseAuth mAuth;
+        EditText etUsername, etEmail, etPassword;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_sign_up);
 
+            // connect to firebase auth server
             mAuth = FirebaseAuth.getInstance();
 
+            // register EditText with their ids
+            etUsername = findViewById(R.id.usernameField);
+            etEmail = findViewById(R.id.emailField);
+            etPassword = findViewById(R.id.passwordField);
+
+            // init dropdown spinner
             spinner_roles = findViewById(R.id.dropdown_roles);
 
             String[] accountType = getResources().getStringArray(R.array.account_type);
@@ -39,6 +48,7 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
             spinner_roles.setAdapter(adapter);
 
         }
+
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
             String selectedRole = adapterView.getItemAtPosition(i).toString();
@@ -47,6 +57,33 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
         @Override
         public void onNothingSelected(AdapterView<?> adapterView) {
 
+        }
+
+        public void onSignUpButtonClick(View view) {
+            checkAllFields();
+        }
+
+        private boolean checkAllFields() {
+            boolean valid = true;
+            if (etUsername.length() == 0) {
+                etUsername.setError("This field is required");
+                valid = false;
+            }
+
+            if (etEmail.length() == 0) {
+                etEmail.setError("Email is required");
+                valid = false;
+            }
+
+            if (etPassword.length() == 0) {
+                etPassword.setError("Password is required");
+                valid = false;
+            } else if (etPassword.length() < 6) {
+                etPassword.setError("Password must be minimum 6 characters");
+                valid = false;
+            }
+
+            return valid;
         }
 
         protected boolean createAccount(String email, String password) {

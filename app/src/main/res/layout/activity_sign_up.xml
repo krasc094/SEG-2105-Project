@@ -92,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/green"
+                android:onClick="onSignUpButtonClick"
                 android:text="@string/btn_sign_up"
                 app:cornerRadius="20dp" />
 
