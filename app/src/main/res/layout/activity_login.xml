@@ -112,6 +112,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_background"
                 android:backgroundTint="@color/green"
+                android:onClick="onRegisterButtonClick"
                 android:text="@string/action_sign_up"
                 app:toggleCheckedStateOnClick="false" />
 

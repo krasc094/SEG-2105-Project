@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (user != null) {
             // user is signed in
-            Intent intent = new Intent();
+            Intent intent = new Intent(this, WelcomeScreen.class);
+            startActivity(intent);
         } else {
             // no user is signed in
             Intent intent = new Intent(this, LoginScreen.class);

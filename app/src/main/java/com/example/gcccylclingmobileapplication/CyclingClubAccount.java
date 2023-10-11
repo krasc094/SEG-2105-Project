@@ -1,4 +1,4 @@
-package com.example.gcccylclingmobileapplication;
+/* package com.example.gcccylclingmobileapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -80,4 +80,6 @@ public class CyclingClubAccount extends AppCompatActivity {
 
     
 }
+*/
+
 

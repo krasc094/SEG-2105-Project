@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,15 +16,29 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-        private Spinner spinner_roles;
+
         private FirebaseAuth mAuth;
-        EditText etUsername, etEmail, etPassword;
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        private EditText etUsername, etEmail, etPassword;
+        private Spinner spinner_roles;
+        private String selectedRole;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +66,7 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
 
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-            String selectedRole = adapterView.getItemAtPosition(i).toString();
+            selectedRole = adapterView.getItemAtPosition(i).toString();
         }
 
         @Override
@@ -60,7 +75,11 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
         }
 
         public void onSignUpButtonClick(View view) {
-            checkAllFields();
+            if (!checkAllFields()) return;
+            String email = String.valueOf(etEmail.getText());
+            String password = String.valueOf(etPassword.getText());
+
+            createAccount(email, password);
         }
 
         private boolean checkAllFields() {
@@ -86,8 +105,7 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
             return valid;
         }
 
-        protected boolean createAccount(String email, String password) {
-            boolean success = false;
+        protected void createAccount(String email, String password) {
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -96,16 +114,38 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
                                 // create account success
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                userCreated(user);
                             } else {
                                 // create account fail
                                 Log.w(TAG,  "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(SignupScreen.this, "Authentication failed.",
+                                Toast.makeText(SignupScreen.this, "Could not make account.",
                                         Toast.LENGTH_SHORT).show();
+                                userCreated(null);
                             }
                         }
                     });
-            return success;
         }
 
+        private void userCreated(FirebaseUser user) {
+            if (user == null) return;
+
+            String username = String.valueOf(etUsername.getText());
+            String uid = user.getUid();
+
+            CollectionReference users = db.collection("users");
+            Map<String, Object> userMap = new HashMap<>();
+            userMap.put("username", username);
+            userMap.put("role", selectedRole);
+            users.document(uid).set(userMap);
+
+            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                    .setDisplayName("username")
+                    .build();
+
+            user.updateProfile(profileUpdates);
+
+            Intent intent = new Intent(this, WelcomeScreen.class);
+            startActivity(intent);
+        }
 
     }
