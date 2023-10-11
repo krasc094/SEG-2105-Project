@@ -1,11 +1,14 @@
 package com.example.gcccylclingmobileapplication;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.ktx.Firebase;
 
-public class Account {
+abstract class Account {
 
     String message;
     String firstName;
+    String lastName;
     String username;
     String password;
 
