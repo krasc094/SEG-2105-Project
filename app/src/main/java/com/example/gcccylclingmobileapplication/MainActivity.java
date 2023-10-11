@@ -2,6 +2,7 @@ package com.example.gcccylclingmobileapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,9 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (user != null) {
             // user is signed in
-            Intent intent = new Intent()
+            Intent intent = new Intent();
         } else {
             // no user is signed in
+            Intent intent = new Intent(this, SignupScreen.class);
+            startActivity(intent);
         }
     }
 }

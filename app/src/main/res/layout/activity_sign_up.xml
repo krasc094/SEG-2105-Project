@@ -47,7 +47,7 @@
                 android:layout_marginTop="40dp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/emailField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -60,7 +60,7 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/usernameField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -73,7 +73,7 @@
                 android:textColor="@color/black" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/passwordField"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"

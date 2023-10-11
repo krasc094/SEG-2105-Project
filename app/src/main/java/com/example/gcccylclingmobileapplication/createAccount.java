@@ -23,9 +23,9 @@ public class createAccount extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         mAuth = FirebaseAuth.getInstance();
-        emailEditText = findViewById(R.id.email);
-        passwordEditText = findViewById(R.id.password);
-        usernameEditText = findViewById(R.id.username);
+        emailEditText = findViewById(R.id.emailField);
+        passwordEditText = findViewById(R.id.passwordField);
+        usernameEditText = findViewById(R.id.usernameField);
 
         Button registerButton = findViewById(R.id.btn_sign_up);
 

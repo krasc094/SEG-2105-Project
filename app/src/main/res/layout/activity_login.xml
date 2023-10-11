@@ -35,7 +35,6 @@
             app:srcCompat="@drawable/pedalpal" />
 
         <Space
-            android:id="@+id/pedalpalLogo"
             android:layout_width="wrap_content"
             android:layout_height="76dp"
             android:background="@drawable/pedalpal" />
