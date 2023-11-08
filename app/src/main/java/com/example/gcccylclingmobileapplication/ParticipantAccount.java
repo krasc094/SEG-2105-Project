@@ -1,4 +1,4 @@
-package com.example.gcccylclingmobileapplication.sampledata;
+package com.example.gcccylclingmobileapplication;
 
 import com.example.gcccylclingmobileapplication.Account;
 

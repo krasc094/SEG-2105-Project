@@ -1,2 +1,4 @@
-package com.example.gcccylclingmobileapplication;public class AdminAccount {
+package com.example.gcccylclingmobileapplication;
+
+public class AdminAccount extends Account {
 }
