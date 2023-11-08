@@ -29,7 +29,12 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string-array name = "account_type">
+    <string name="event_create">Create Event</string>
+    <string name="event_delete">Delete Event</string>
+    <string name="events_selection">Event Selection</string>
+    <string name="event_edit">Edit Event</string>
+
+    <string-array name="account_type">
         <item> Cycling Club </item>
         <item> Participant </item>
     </string-array>
