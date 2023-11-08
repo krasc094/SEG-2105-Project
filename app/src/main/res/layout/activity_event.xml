@@ -12,83 +12,61 @@
         android:layout_height="match_parent"
         android:background="@drawable/road_pic" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="101dp" />
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:foregroundGravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/events_tab"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/event_name"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/event_name" />
+
+        <Button
+            android:id="@+id/btn_createEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/login_border"
-            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            android:drawableLeft="@drawable/baseline_add_24"
+            android:gravity="center"
             android:padding="10dp"
-            >
+            android:text="@string/event_create" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/events_selection"
-                android:textSize="24sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="27dp" />
+        <Button
+            android:id="@+id/btn_updateEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_background_yellow"
+            android:drawableLeft="@drawable/baseline_update_24"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/btn_update" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-
-                android:background="@drawable/pedalpal" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <Button
-                    android:id="@+id/btn_createEvent2"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/button_background"
-                    android:drawableLeft="@drawable/baseline_add_24"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="@string/event_create" />
-
-                <Button
-                    android:id="@+id/btn_editEvent2"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/btn_background_yellow"
-                    android:drawableLeft="@drawable/baseline_edit_24"
-                    android:padding="10dp"
-                    android:text="@string/event_edit" />
-
-                <Button
-                    android:id="@+id/btn_deleteEvent2"
-                    android:layout_width="130dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_background_red"
-                    android:drawableLeft="@drawable/baseline_delete_24"
-                    android:padding="10dp"
-                    android:text="@string/event_delete"
-                    android:textColor="@color/white" />
-            </TableRow>
-
-        </LinearLayout>
+        <ListView
+            android:id="@+id/event_listView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

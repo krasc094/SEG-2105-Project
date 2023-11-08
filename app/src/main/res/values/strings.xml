@@ -31,8 +31,11 @@
 
     <string name="event_create">Create Event</string>
     <string name="event_delete">Delete Event</string>
-    <string name="events_selection">Event Selection</string>
+    <string name="events_tab">Events</string>
     <string name="event_edit">Edit Event</string>
+    <string name="event_name">Enter the Name of The Event</string>
+    <string name="btn_update">Update</string>
+
 
     <string-array name="account_type">
         <item> Cycling Club </item>
