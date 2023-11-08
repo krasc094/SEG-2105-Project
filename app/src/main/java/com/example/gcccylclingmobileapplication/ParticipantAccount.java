@@ -1,4 +1,6 @@
-package com.example.gcccylclingmobileapplication;
+package com.example.gcccylclingmobileapplication.sampledata;
+
+import com.example.gcccylclingmobileapplication.Account;
 
 public class ParticipantAccount extends Account {
     public boolean createAccount() {
