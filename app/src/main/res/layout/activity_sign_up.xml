@@ -39,7 +39,7 @@
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/dropdown_roles"
+                android:id="@+id/spinnerRoles"
                 android:layout_width="match_parent"
                 android:spinnerMode ="dialog"
                 android:layout_height="wrap_content"

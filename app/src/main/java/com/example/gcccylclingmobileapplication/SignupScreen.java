@@ -16,18 +16,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +32,7 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
         private FirebaseAuth mAuth;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         private EditText etUsername, etEmail, etPassword;
-        private Spinner spinner_roles;
+        private Spinner roleSelector;
         private String selectedRole;
 
         @Override
@@ -54,20 +49,23 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
             etPassword = findViewById(R.id.passwordField);
 
             // init dropdown spinner
-            spinner_roles = findViewById(R.id.dropdown_roles);
+            roleSelector = findViewById(R.id.spinnerRoles);
 
-            String[] accountType = getResources().getStringArray(R.array.account_type);
-            ArrayAdapter adapter = new ArrayAdapter(this,
-                    android.R.layout.simple_spinner_item, accountType);
+            ArrayAdapter adapter = new ArrayAdapter(
+                    this,
+                    android.R.layout.simple_spinner_item,
+                    getResources().getStringArray(R.array.account_type)
+                    );
+
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner_roles.setAdapter(adapter);
+            roleSelector.setAdapter(adapter);
 
+            roleSelector.setOnItemSelectedListener(this);
         }
 
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
             selectedRole = adapterView.getItemAtPosition(i).toString();
-            System.out.println(selectedRole);
         }
 
         @Override
@@ -82,6 +80,7 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
             String email = String.valueOf(etEmail.getText());
             String username = String.valueOf(etUsername.getText());
             String password = String.valueOf(etPassword.getText());
+
             String role = selectedRole;
 
             AccountManager accountManager = new AccountManager();
@@ -89,11 +88,12 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
 
             System.out.println(role);
 
-            if (role == "Participant") {
+            if ( role.equals("Participant") ) {
                 acc = new ParticipantAccount();
-            } else if (role == "Cycling Club") {
+            } else if ( role.equals("Cycling Club") ) {
                 acc = new CyclingClubAccount();
             } else {
+                System.out.println("else ran");
                 acc = new ParticipantAccount();
             }
 
