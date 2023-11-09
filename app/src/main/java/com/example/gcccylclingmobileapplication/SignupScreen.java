@@ -67,6 +67,7 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
             selectedRole = adapterView.getItemAtPosition(i).toString();
+            System.out.println(selectedRole);
         }
 
         @Override
@@ -75,11 +76,31 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
         }
 
         public void onSignUpButtonClick(View view) {
-            if (!checkAllFields()) return;
-            String email = String.valueOf(etEmail.getText());
-            String password = String.valueOf(etPassword.getText());
 
-            createAccount(email, password);
+            if (!checkAllFields()) return;
+
+            String email = String.valueOf(etEmail.getText());
+            String username = String.valueOf(etUsername.getText());
+            String password = String.valueOf(etPassword.getText());
+            String role = selectedRole;
+
+            AccountManager accountManager = new AccountManager();
+            Account acc;
+
+            System.out.println(role);
+
+            if (role == "Participant") {
+                acc = new ParticipantAccount();
+            } else if (role == "Cycling Club") {
+                acc = new CyclingClubAccount();
+            } else {
+                acc = new ParticipantAccount();
+            }
+
+            acc.setEmail( email );
+            acc.setUsername( username );
+
+            accountManager.createAccount(acc, password);
         }
 
         private boolean checkAllFields() {
@@ -97,30 +118,39 @@ public class SignupScreen extends AppCompatActivity implements AdapterView.OnIte
             if (etPassword.length() == 0) {
                 etPassword.setError("Password is required");
                 valid = false;
+
             } else if (etPassword.length() < 6) {
                 etPassword.setError("Password must be minimum 6 characters");
                 valid = false;
             }
 
+            // System.out.println("checked -> " + valid);
             return valid;
         }
 
         protected void createAccount(String email, String password) {
+            boolean success = false;
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+
                             if (task.isSuccessful()) {
+
                                 // create account success
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 userCreated(user);
+
                             } else {
+
                                 // create account fail
                                 Log.w(TAG,  "createUserWithEmail:failure", task.getException());
                                 Toast.makeText(SignupScreen.this, "Could not make account.",
                                         Toast.LENGTH_SHORT).show();
                                 userCreated(null);
+
                             }
                         }
                     });

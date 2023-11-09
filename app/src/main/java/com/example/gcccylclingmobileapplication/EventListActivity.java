@@ -49,6 +49,7 @@ class EventListActivity extends AppCompatActivity {
 
             }
         });
+
         //select item
         event_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -68,10 +69,6 @@ class EventListActivity extends AppCompatActivity {
                 myAddapter1.notifyDataSetChanged();
             }
         });
-
-
-
-
 
         //Delete
         event_listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

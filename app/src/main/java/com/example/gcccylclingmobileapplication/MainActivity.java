@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (user != null) {
             // user is signed in
-            Intent intent = new Intent(this, WelcomeScreen.class);
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(this, SignupScreen.class);
             startActivity(intent);
         } else {
             // no user is signed in
