@@ -32,7 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignupScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class  SignupScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
         private FirebaseAuth mAuth;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
