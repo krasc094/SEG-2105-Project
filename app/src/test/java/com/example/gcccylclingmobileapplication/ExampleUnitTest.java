@@ -14,4 +14,13 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void testCreateAccount() {
+        AccountManager accManager = new AccountManager();
+        Account acc = new ParticipantAccount("testAccount@email.com");
+
+        accManager.createAccount(acc, "password");
+    }
+
 }

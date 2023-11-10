@@ -35,6 +35,13 @@
     <string name="event_edit">Edit Event</string>
     <string name="event_name">Enter the Name of The Event</string>
     <string name="btn_update">Update</string>
+    
+    <string name="event_editName">Edit Event Name</string>
+    <string name="min_event_age">Insert the Minimum Age For the Event</string>
+    <string name="max_event_age">Insert the Maximum Age For the Event</string>
+    <string name="event_lvl">Insert Desired Event Level</string>
+    <string name="event_pace">Insert the Pace Of the Event</string>
+    <string name="event_confirm">Confirm Changes</string>
 
 
     <string-array name="account_type">
