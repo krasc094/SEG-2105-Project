@@ -1,4 +1,4 @@
-package com.example.gcccylclingmobileapplication;
+package com.example.gcccylclingmobileapplication.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.gcccylclingmobileapplication.R;
 
 import java.util.ArrayList;
 

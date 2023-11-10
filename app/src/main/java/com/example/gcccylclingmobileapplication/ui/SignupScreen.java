@@ -1,4 +1,4 @@
-package com.example.gcccylclingmobileapplication;
+package com.example.gcccylclingmobileapplication.ui;
 
 import static android.content.ContentValues.TAG;
 
@@ -15,6 +15,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.gcccylclingmobileapplication.Account;
+import com.example.gcccylclingmobileapplication.AccountManager;
+import com.example.gcccylclingmobileapplication.CyclingClubAccount;
+import com.example.gcccylclingmobileapplication.ParticipantAccount;
+import com.example.gcccylclingmobileapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

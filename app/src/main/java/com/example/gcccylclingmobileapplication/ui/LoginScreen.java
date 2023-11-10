@@ -1,4 +1,4 @@
-package com.example.gcccylclingmobileapplication;
+package com.example.gcccylclingmobileapplication.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.gcccylclingmobileapplication.R;
+import com.example.gcccylclingmobileapplication.ui.SignupScreen;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

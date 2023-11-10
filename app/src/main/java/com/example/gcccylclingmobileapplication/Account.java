@@ -4,7 +4,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.ktx.Firebase;
 
-abstract class Account {
+public abstract class Account {
 
     String message;
 

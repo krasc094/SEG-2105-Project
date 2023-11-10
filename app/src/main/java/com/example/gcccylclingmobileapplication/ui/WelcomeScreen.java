@@ -1,4 +1,4 @@
-package com.example.gcccylclingmobileapplication;
+package com.example.gcccylclingmobileapplication.ui;
 
 import static android.content.ContentValues.TAG;
 
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.gcccylclingmobileapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
