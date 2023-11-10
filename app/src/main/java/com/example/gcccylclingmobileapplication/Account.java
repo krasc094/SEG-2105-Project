@@ -15,10 +15,6 @@ public abstract class Account {
     String username;
     String uid;
 
-    public boolean logIn() {
-        return false;
-    }
-
     // getters and setters
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
@@ -27,12 +23,13 @@ public abstract class Account {
     public void setUID(String uid) { this.uid = uid; }
 
 
-    public String getMessage() { return message; }
+
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getEmail() { return email; }
     public String getUsername() { return username; }
     public String getUID() { return uid; }
+    public String getMessage() { return message; }
 
     abstract String getRole();
 

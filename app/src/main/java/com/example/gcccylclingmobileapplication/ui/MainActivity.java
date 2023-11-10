@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (user != null) {
             // user is signed in
+
+            // code below is for testing
+            // sign out and send to signup screen
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(this, SignupScreen.class);
             startActivity(intent);
