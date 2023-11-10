@@ -27,7 +27,11 @@ import java.util.Map;
 
 public class AccountManager {
 
-    private Account loggedInAccount;
+    // TO-DO
+    // implement everything
+    // comment and organize methods
+
+    private Account loggedInAccount = null;
     private Context lastActivity;
     public AccountManager() {}
 
@@ -48,7 +52,7 @@ public class AccountManager {
 
         setLoggedInAccount( account );
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance(); // get ref to firebase auth server
 
         mAuth.createUserWithEmailAndPassword(account.getEmail(), password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -83,6 +87,7 @@ public class AccountManager {
     }
 
     protected boolean deleteAccount(String uid) {
+        // implement later
         return false;
     }
 
@@ -105,12 +110,14 @@ public class AccountManager {
         // set account details in database
         final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
-        DatabaseReference ref = db.getReference("users");
+        DatabaseReference ref = db.getReference("users/uid"); // get reference to '/users/uid/' directory
 
-        Map<String, Account> users = new HashMap<>();
-        users.put(loggedInAccount.getUID(), loggedInAccount);
 
-        ref.child("uid").child(loggedInAccount.getUID()).setValue(loggedInAccount);
+        Map<String, Account> users = new HashMap<>(); // create local hash map
+        users.put(loggedInAccount.getUID(), loggedInAccount); // put data in local hash map as / <UID> -> account
+
+        ref.setValue(users); // put hash map in database at /users/uid/ directory
+        // ref.child("uid").child( loggedInAccount.getUID() ).setValue( loggedInAccount ); // directly set data
     }
 
     private void createAccountOnFailure(Exception e) {

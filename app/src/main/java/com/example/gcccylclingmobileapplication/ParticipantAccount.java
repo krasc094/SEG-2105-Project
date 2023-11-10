@@ -14,6 +14,7 @@ public class ParticipantAccount extends Account {
         return false;
     }
 
+    // getters and setters
     public String getRole(){ return "Participant"; }
 
 }
