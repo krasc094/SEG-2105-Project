@@ -110,7 +110,7 @@ public class AccountManager {
         // set account details in database
         final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
-        DatabaseReference ref = db.getReference("users/uid"); // get reference to '/users/uid/' directory
+        DatabaseReference ref = db.getReference("users/id"); // get reference to '/users/uid/' directory
 
 
         Map<String, Account> users = new HashMap<>(); // create local hash map
