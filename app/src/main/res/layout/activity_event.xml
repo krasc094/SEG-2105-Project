@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".event">
+    tools:context=".EventListActivity">
 
     <ImageView
         android:id="@+id/img_background"
@@ -46,6 +46,19 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/event_create" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/btn_editEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/event_edit"
+            android:drawableLeft="@drawable/baseline_edit_24"
+            />
 
         <Space
             android:layout_width="match_parent"

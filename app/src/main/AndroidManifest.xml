@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GCCCylclingMobileApplication"
         tools:targetApi="31">
-        
+        <activity
+            android:name=".EditEvent"
+            android:exported="false" />
         <activity
             android:name=".WelcomeScreen"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -26,19 +27,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SignupScreen"
             android:exported="false" />
-
         <activity
             android:name=".LoginScreen"
             android:exported="false" />
-
         <activity
             android:name=".EventListActivity"
-            android:exported="false" />
-
+            android:exported="true" />
     </application>
 
 </manifest>
