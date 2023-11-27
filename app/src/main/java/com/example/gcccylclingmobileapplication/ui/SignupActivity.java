@@ -32,7 +32,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class  SignupScreen extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class SignupActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
         private FirebaseAuth mAuth;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -152,7 +152,7 @@ public class  SignupScreen extends AppCompatActivity implements AdapterView.OnIt
 
                                 // create account fail
                                 Log.w(TAG,  "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(SignupScreen.this, "Could not make account.",
+                                Toast.makeText(SignupActivity.this, "Could not make account.",
                                         Toast.LENGTH_SHORT).show();
                                 userCreated(null);
 
@@ -179,7 +179,7 @@ public class  SignupScreen extends AppCompatActivity implements AdapterView.OnIt
 
             user.updateProfile(profileUpdates);
 
-            Intent intent = new Intent(this, WelcomeScreen.class);
+            Intent intent = new Intent(this, WelcomeActivity.class);
             startActivity(intent);
         }
 

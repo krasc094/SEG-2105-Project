@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:id="@+id/signup_layout"
-    tools:context=".ui.SignupScreen"
+    tools:context=".ui.SignupActivity"
     android:background="@drawable/personcrossingroad">
 
     <androidx.cardview.widget.CardView

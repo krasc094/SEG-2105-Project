@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
             // code below is for testing
             // sign out and send to signup screen
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(this, SignupScreen.class);
+            Intent intent = new Intent(this, SignupActivity.class);
             startActivity(intent);
         } else {
             // no user is signed in
-            Intent intent = new Intent(this, LoginScreen.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
     }

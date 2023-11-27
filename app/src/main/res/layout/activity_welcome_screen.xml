@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/road_pic"
-    tools:context=".ui.WelcomeScreen">
+    tools:context=".ui.WelcomeActivity">
 
 
     <LinearLayout

@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.gcccylclingmobileapplication.R;
-import com.example.gcccylclingmobileapplication.ui.SignupScreen;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginScreen extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,7 @@ public class LoginScreen extends AppCompatActivity {
     }
 
     public void onRegisterButtonClick(View view){
-        Intent intent = new Intent(this, SignupScreen.class);
+        Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
     }
 }
