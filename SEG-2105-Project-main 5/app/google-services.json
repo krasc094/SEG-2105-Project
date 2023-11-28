@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "420210706700",
+    "firebase_url": "https://project-for-seg-default-rtdb.firebaseio.com",
+    "project_id": "project-for-seg",
+    "storage_bucket": "project-for-seg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420210706700:android:b693107e9de70e7d9ea129",
+        "android_client_info": {
+          "package_name": "com.example.gcccylclingmobileapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAa51clJlgIYvsx5iWd_FitokXAgiDXPSU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
