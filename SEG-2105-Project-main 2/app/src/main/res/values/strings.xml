@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">GCC Cycling Mobile Application</string>
+    <string name="welcome_screen_header"> Welcome </string>
+    <string name="client_name"> (name) </string>
+    <string name="logged_in_prompt"> You are logged in as </string>
+    <string name="client_role"> (role) </string>
+    <string name="login"> Login </string>
+
+    <string name="hint_email"> Email </string>
+    <string name="hint_username"> Username </string>>
+    <string name="hint_password"> Password </string>
+
+    <string name="prompt_signup"> Don\'t have an account yet? </string>
+    <string name="btn_register"> Click here to sign up</string>
+
+    <string name="btn_sign_in"> Sign In </string>
+    <string name="btn_sign_up"> Sign Up </string>
+
+    <string name="title_activity_create_account"> CreateAccountActivity </string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_up">Sign up</string>
+
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="event_create">Create Event</string>
+    <string name="event_delete">Delete Event</string>
+    <string name="events_tab">Events</string>
+    <string name="event_edit">Edit Event</string>
+    <string name="event_name">Enter the Name of The Event</string>
+    <string name="btn_update">Update</string>
+
+    <string name="event_editName">Edit Event Name</string>
+    <string name="min_event_age">Insert the Minimum Age For the Event</string>
+    <string name="max_event_age">Insert the Maximum Age For the Event</string>
+    <string name="event_lvl">Insert Desired Event Level</string>
+    <string name="event_pace">Insert the Pace Of the Event</string>
+    <string name="event_confirm">Confirm Changes</string>
+    <string name="hint_event">Event Description</string>
+
+
+    <string-array name="Events">
+        <item> Time Trial </item>
+        <item> Hill Climb </item>
+        <item> Road Stage Race </item>
+    </string-array>
+
+    <string-array name="account_type">
+        <item> Cycling Club </item>
+        <item> Participant </item>
+    </string-array>
+</resources>
