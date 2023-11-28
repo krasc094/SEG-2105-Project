@@ -14,16 +14,21 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DatabaseRegistrar;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 public class AccountManager {
 
@@ -35,7 +40,7 @@ public class AccountManager {
     private Context lastActivity;
     public AccountManager() {}
 
-    public void createAccount(Account account, String password) {
+    public void createAccount(Account account, String password, Function onSuccessFunction) {
         // accounts are expected to at least have:
         // username
         // email
@@ -82,9 +87,25 @@ public class AccountManager {
         // create different account type based off of type in details
         // set details on account object
         // return account object
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("users").child("uid").child(uid);
 
+        int testVal = 0;
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         return null;
     }
+
+
 
     protected boolean deleteAccount(String uid) {
         // implement later
@@ -101,6 +122,10 @@ public class AccountManager {
         return loggedInAccount;
     }
 
+    private void createAccountOnSuccess(FirebaseUser user, Function<Object, Object> onSuccessFunction) {
+        createAccountOnSuccess(user);
+        onSuccessFunction.apply(null);
+    }
     private void createAccountOnSuccess(FirebaseUser user) {
         Log.d(TAG, "createUserWithEmail:success");
 
@@ -111,7 +136,6 @@ public class AccountManager {
         final FirebaseDatabase db = FirebaseDatabase.getInstance();
 
         DatabaseReference ref = db.getReference("users/id"); // get reference to '/users/uid/' directory
-
 
         Map<String, Account> users = new HashMap<>(); // create local hash map
         users.put(loggedInAccount.getUID(), loggedInAccount); // put data in local hash map as / <UID> -> account

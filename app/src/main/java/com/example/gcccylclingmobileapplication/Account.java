@@ -7,10 +7,8 @@ import com.google.firebase.ktx.Firebase;
 public abstract class Account {
 
     String message;
-
     String firstName;
     String lastName;
-
     String email;
     String username;
     String uid;
