@@ -179,7 +179,7 @@ public class SignupActivity extends AppCompatActivity implements AdapterView.OnI
 
             user.updateProfile(profileUpdates);
 
-            Intent intent = new Intent(this, WelcomeActivity.class);
+            Intent intent = new Intent(this, ClubWelcomeScreen.class);
             startActivity(intent);
         }
 

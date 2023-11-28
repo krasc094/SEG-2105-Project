@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/road_pic"
-    tools:context=".ui.WelcomeActivity">
+    tools:context=".ui.ClubWelcomeScreen">
 
 
     <LinearLayout
@@ -63,26 +63,42 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-black"
             android:gravity="center"
-            android:text="@string/logged_in_prompt"
+            android:text="You are logged in as a club"
             android:textColor="#184E31"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:text="@string/client_role"
-            android:textColor="#184E31"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
     </LinearLayout>
+
+
+
+        <!--sends user to EditProfile-->
+    <Button
+        android:id="@+id/editProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="530dp"
+
+        android:text="Edit Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <!--sends user to EventPostings-->
+    <Button
+        android:id="@+id/viewEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="612dp"
+
+        android:text="View Events"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </RelativeLayout>
