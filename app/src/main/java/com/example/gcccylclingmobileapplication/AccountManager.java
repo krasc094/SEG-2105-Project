@@ -25,6 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DatabaseRegistrar;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -78,41 +80,56 @@ public class AccountManager {
     
     }
 
-    public Account getAccount(String uid) {
-        Account account;
-
+    public void loadAccountData(String uid) {
         // get account from uid
         // get account details from database + uid
         // get account type from account details
         // create different account type based off of type in details
         // set details on account object
         // return account object
+
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("users").child("uid").child(uid);
 
         int testVal = 0;
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    // data retrieved
+                    DataSnapshot data = task.getResult();
+                    String role = data.child("role").getValue(String.class);
 
-            }
+                    Account account;
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                    if (role == new CyclingClubAccount().getRole()) {
+                        account = data.getValue(CyclingClubAccount.class);
 
+                    } else if (role == new AdminAccount().getRole()) {
+                        account = data.getValue(AdminAccount.class);
+
+                    } else {
+                        account = data.getValue(ParticipantAccount.class);
+                    }
+
+                    setLoggedInAccount(account);
+                } else {
+                    // failed
+
+                    // implement later
+
+                }
             }
         });
-        return null;
     }
 
-
-
-    protected boolean deleteAccount(String uid) {
+    protected void deleteAccount(String uid) {
         // implement later
-        return false;
-    }
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("users").child("uid").child(uid);
 
-    public void logIn(String uid) {}
+        ref.removeValue();
+    }
 
     private void setLoggedInAccount(Account account) {
         this.loggedInAccount = account;

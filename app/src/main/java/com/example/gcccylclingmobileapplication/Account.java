@@ -12,6 +12,7 @@ public abstract class Account {
     String email;
     String username;
     String uid;
+    String role;
 
     // getters and setters
     public void setFirstName(String firstName) { this.firstName = firstName; }
