@@ -42,6 +42,37 @@
     <string name="event_lvl">Insert Desired Event Level</string>
     <string name="event_pace">Insert the Pace Of the Event</string>
     <string name="event_confirm">Confirm Changes</string>
+    <string name="input_name">Input Name</string>
+    <string name="event_hint">event description</string>
+
+    <string-array name="event_types_spinner">
+        <item>TimeTrial</item>
+        <item>HillClimb</item>
+        <item>GroupRides</item>
+    </string-array>
+    <string-array name="difficulty_spinner">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="minimumAge_spinner">
+        <item>All Ages</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+    </string-array>
+    <string-array name="pace_spinner">
+        <item>Beginner: 10&#8211;12mph</item>
+        <item>Average: 12&#8211;15mph</item>
+        <item>Competent: 15&#8211;16mph</item>
+        <item>Experienced: 16&#8211;19mph</item>
+        <item>Expert: 20&#8211;24mph</item>
+    </string-array>
 
 
     <string-array name="account_type">

@@ -7,6 +7,20 @@
     tools:context=".ui.AddNewEvent">
 
     <TextView
+        android:id="@+id/event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Name:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add New Event"
@@ -19,19 +33,21 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <TextView
+        android:id="@+id/minimumAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Minimum Age:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintHorizontal_bias="0.149"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintVertical_bias="0.267" />
 
     <TextView
+        android:id="@+id/pace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pace:"
@@ -45,6 +61,20 @@
         app:layout_constraintVertical_bias="0.34" />
 
     <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/difficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Difficulty:"
@@ -57,7 +87,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.446" />
 
+
     <TextView
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Description:"
@@ -86,8 +118,8 @@
         android:id="@+id/selectAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="188dp"
 
         android:text="Select Age"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="224dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="232dp"
 
         android:text="Select Pace"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,10 +140,34 @@
         android:id="@+id/selectDifficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="232dp"
+        android:layout_marginStart="224dp"
         android:layout_marginTop="316dp"
 
         android:text="Select Difficulty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/selectType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="352dp"
+
+        android:text="Select Type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/event_name_input"
+        android:layout_width="157dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="120dp"
+        android:hint="@string/input_name"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:textColor="#184E31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -121,7 +177,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="64dp"
         android:layout_marginTop="440dp"
-        android:hint="@string/hint_event"
+        android:hint="@string/event_hint"
         android:inputType="textEmailAddress"
         android:padding="8dp"
         android:textColor="#184E31"
