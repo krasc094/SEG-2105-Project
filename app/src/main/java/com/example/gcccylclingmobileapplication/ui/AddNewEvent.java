@@ -30,7 +30,7 @@ public class AddNewEvent extends AppCompatActivity implements AdapterView.OnItem
         Spinner difficulty_spinner = (Spinner) findViewById(R.id.selectDifficulty);
         Spinner minimumAge_spinner = (Spinner) findViewById(R.id.selectAge);
         Spinner type_spinner = (Spinner) findViewById(R.id.selectType);
-        Button addEvent = findViewById(R.id.addEvent);
+        Button addEvent = (Button) findViewById(R.id.addEvent);
 
         ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.event_types_spinner, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> difficultyAdapter = ArrayAdapter.createFromResource(this, R.array.difficulty_spinner, android.R.layout.simple_spinner_item);
