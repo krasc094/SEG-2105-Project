@@ -33,7 +33,7 @@
 
 
     <Spinner
-        android:id="@+id/selectEvent"
+        android:id="@+id/selectParticipant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
