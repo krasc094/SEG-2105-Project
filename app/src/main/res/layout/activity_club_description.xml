@@ -7,6 +7,7 @@
     tools:context=".ui.ClubDescription">
 
     <TextView
+        android:id="@+id/clubNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(Club name here)"
@@ -20,6 +21,7 @@
 
 
     <TextView
+        android:id="@+id/socialMediaView"
         android:layout_width="163dp"
         android:layout_height="32dp"
         android:text="(Social Media)"
@@ -61,6 +63,7 @@
         app:layout_constraintVertical_bias="0.427" />
 
     <TextView
+        android:id="@+id/contactNameView"
         android:layout_width="161dp"
         android:layout_height="26dp"
         android:text="(Name)"
@@ -73,6 +76,7 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <TextView
+        android:id="@+id/phoneNumberView"
         android:layout_width="163dp"
         android:layout_height="34dp"
         android:text="(Phone Number)"

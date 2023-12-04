@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,8 +25,8 @@ public class AddNewEvent extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_event);
 
-        TextView description = findViewById(R.id.description);
-        TextView event_name = findViewById(R.id.event_name_input);
+        EditText description = findViewById(R.id.eventDescription);
+        EditText event_name = findViewById(R.id.event_name_input);
         Spinner pace_spinner = (Spinner) findViewById(R.id.selectPace);
         Spinner difficulty_spinner = (Spinner) findViewById(R.id.selectDifficulty);
         Spinner minimumAge_spinner = (Spinner) findViewById(R.id.selectAge);
