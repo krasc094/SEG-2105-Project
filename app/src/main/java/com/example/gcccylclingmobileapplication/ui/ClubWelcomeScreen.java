@@ -2,6 +2,7 @@ package com.example.gcccylclingmobileapplication.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,15 +32,24 @@ public class ClubWelcomeScreen extends AppCompatActivity {
         viewEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                openEventPostings();
             }
         });
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                openEditProfile();
             }
         });
 
+    }
+
+    public void openEditProfile() {
+        Intent intent = new Intent(this, EditProfile.class);
+        startActivity(intent);
+    }
+    public void openEventPostings(){
+        Intent intent = new Intent(this, EventPostings.class);
+        startActivity(intent);
     }
 }

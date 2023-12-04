@@ -7,6 +7,7 @@
     tools:context=".ui.EventDescription">
 
     <TextView
+        android:id="@+id/nameOfEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(name of the event here)"
@@ -20,6 +21,7 @@
 
 
     <TextView
+        android:id="@+id/eventDescription"
         android:layout_width="321dp"
         android:layout_height="226dp"
         android:text="(Description here)"
@@ -32,6 +34,7 @@
         app:layout_constraintVertical_bias="0.289" />
 
     <TextView
+        android:id="@+id/eventAge"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Age)"
@@ -58,6 +61,7 @@
         app:layout_constraintVertical_bias="0.57" />
 
     <TextView
+        android:id="@+id/eventPace"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Pace)"
@@ -84,6 +88,7 @@
         app:layout_constraintVertical_bias="0.663" />
 
     <TextView
+        android:id="@+id/eventDifficulty"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Difficulty)"

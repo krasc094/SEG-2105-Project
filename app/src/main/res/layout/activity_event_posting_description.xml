@@ -7,6 +7,7 @@
     tools:context=".ui.EventPostingDescription">
 
     <TextView
+        android:id="@+id/event_posting_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="(name of the event here)"
@@ -20,6 +21,7 @@
 
 
     <TextView
+        android:id="@+id/eventPostingDescription"
         android:layout_width="282dp"
         android:layout_height="117dp"
         android:text="(Description here)"
@@ -33,6 +35,7 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <TextView
+        android:id="@+id/eventPostingAge"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Age)"
@@ -46,6 +49,7 @@
         app:layout_constraintVertical_bias="0.618" />
 
     <TextView
+        android:id="@+id/eventPostingDate"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Date)"
@@ -72,6 +76,7 @@
         app:layout_constraintVertical_bias="0.618" />
 
     <TextView
+        android:id="@+id/eventPostingDifficulty"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Difficulty)"
@@ -124,6 +129,7 @@
         app:layout_constraintVertical_bias="0.35" />
 
     <TextView
+        android:id="@+id/eventPostingAmountParticipants"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(number)"
@@ -137,6 +143,7 @@
         app:layout_constraintVertical_bias="0.343" />
 
     <TextView
+        android:id="@+id/eventPostingPace"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Pace)"
@@ -175,6 +182,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/eventPostingRegion"
         android:layout_width="86dp"
         android:layout_height="32dp"
         android:text="(Region)"
