@@ -2,8 +2,11 @@ package com.example.gcccylclingmobileapplication;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.DatabaseRegistrar;
 import com.google.firebase.database.FirebaseDatabase;
@@ -74,5 +77,39 @@ public class EventManager {
         //Committing new updates to database
         eventRef.updateChildren(eventUpdates);
     }
+
+    public void loadAccountData(String uid) {
+        // get account from uid
+        // get account details from database + uid
+        // get account type from account details
+        // create different account type based off of type in details
+        // set details on account object
+        // return account object
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("users").child("uid").child(uid);
+
+        int testVal = 0;
+        ref.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    // data retrieved
+                    DataSnapshot data = task.getResult();
+                    String role = data.child("role").getValue(String.class);
+
+                    Account account;
+
+
+                } else {
+                    // failed
+
+                    // implement later
+
+                }
+            }
+        });
+    }
+
 
 }
